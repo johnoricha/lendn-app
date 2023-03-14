@@ -1,0 +1,33 @@
+mixin AppImages {
+  static const backArrow = 'assets/back_arrow.svg';
+  static const searchIcon = 'assets/search_icon.svg';
+  static const dropdownIcon = 'assets/dropdown_icon.svg';
+  static const transferAppbarBg = 'assets/transfer_app_bar_bg.png';
+  static const mainScreenBg = 'assets/main_screen_bg.png';
+  static const bankIcon = 'assets/bank_icon.png';
+  static const bankIconSelected = 'assets/bank_icon_selected.png';
+  static const qrCodeIcon = 'assets/qr_code_icon.png';
+  static const userIcon = 'assets/user_icon.png';
+  static const userIconUnselected = 'assets/user_icon_unselected.png';
+  static const wirelessSymbolIcon = 'assets/wireless_symbol_icon.png';
+  static const hailey = 'assets/hailey.png';
+  static const haileySvg = 'assets/hailey.svg';
+  static const haileyContact = 'assets/hailey_contact.png';
+  static const zaynContact = 'assets/zayn_contact.png';
+  static const zayn = 'assets/zayn.png';
+  static const thomas = 'assets/thomas.png';
+  static const thomasContact = 'assets/thomas_contact.png';
+  static const profileImage = 'assets/profile_image.png';
+  static const greenDot = 'assets/green_dot.svg';
+  static const sendIcon = 'assets/send_icon.svg';
+  static const creditCardIcon = 'assets/credit_card_icon.svg';
+  static const growthIcon = 'assets/growth_icon.svg';
+  static const progressBar = 'assets/progress_bar.svg';
+  static const progress = 'assets/progress.svg';
+  static const personalInfoUserIcon = 'assets/personal_info_user_icon.svg';
+  static const thumbsUp = 'assets/thumbs_up.svg';
+  static const onboardingScreenBg = 'assets/happy_young_african_woman.png';
+  static const blackBackIcon = 'assets/black_back_icon.svg';
+  static const lendn = 'assets/lendn.svg';
+  static const getStartedIcon = 'assets/get_started_icon.svg';
+}
