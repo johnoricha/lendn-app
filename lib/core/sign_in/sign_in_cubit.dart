@@ -12,11 +12,11 @@ class SignInCubit extends Cubit<SignInState> {
   Future<void> doSignIn(String email, String password) async {
     emit(state.copyWith(signInStatus: LoadingState()));
 
-    String? email = await storage.getEmail();
-    String? password = await storage.getPassword();
+    String? storageEmail = await storage.getEmail();
+    String? storagePassword = await storage.getPassword();
 
     try {
-      if (state.email == email && state.password == password) {
+      if (email == storageEmail && password == storagePassword) {
         emit(state.copyWith(signInStatus: SuccessState(), errorMsg: null));
       } else {
         emit(state.copyWith(

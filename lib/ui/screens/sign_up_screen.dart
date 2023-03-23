@@ -140,7 +140,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             onClick: () {
                               if (_signUpCubit.areAllFieldsValid() ==
                                   null) {
-                                print('fields valid returns null');
                                 _signUpCubit.doSignUp(state.fullName.trim(),
                                     state.email.trim(), state.password.trim());
                               } else {

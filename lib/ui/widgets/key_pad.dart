@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class KeyPad extends StatelessWidget {
-  double buttonSize = 60.0;
+  final double buttonSize = 60.0;
   final TextEditingController pinController;
   final Function onChange;
   final Function onSubmit;
   final bool isPinLogin;
 
-  KeyPad(
+  const KeyPad(
       {super.key, required this.onChange, required this.onSubmit, required this.pinController, required this.isPinLogin});
 
   @override

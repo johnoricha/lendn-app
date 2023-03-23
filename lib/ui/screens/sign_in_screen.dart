@@ -25,7 +25,8 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   void initState() {
     _signInCubit = AppInitializer.getIt<SignInCubit>();
-        SignInCubit(const SignInState(), LocalStorage());
+    SignInCubit(const SignInState(), LocalStorage());
+    super.initState();
   }
 
   @override
@@ -34,7 +35,8 @@ class _SignInScreenState extends State<SignInScreen> {
       bloc: _signInCubit,
       listener: (context, state) {
         if (state.signInStatus is SuccessState) {
-          Navigator.pushAndRemoveUntil(context,
+          Navigator.pushAndRemoveUntil(
+              context,
               MaterialPageRoute(builder: (context) => const MainScreen()),
               (route) => false);
         }
@@ -71,7 +73,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         children: [
                           LendnTextField(
                             hintText: 'Email',
-                            border: BorderSide(),
+                            border: const BorderSide(),
                             onTyping: (String? value) {
                               _signInCubit.emailChanged(value?.trim() ?? '');
                             },
@@ -89,7 +91,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           Visibility(
                             visible: state.errorMsg != null,
                             child: Text(
-                              state.errorMsg??'',
+                              state.errorMsg ?? '',
                               style: GoogleFonts.dmSans(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
@@ -97,7 +99,6 @@ class _SignInScreenState extends State<SignInScreen> {
                               textAlign: TextAlign.end,
                             ),
                           ),
-
                           Text(
                             'Forgot Password?',
                             style: GoogleFonts.dmSans(
@@ -110,11 +111,11 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       const SizedBox(height: 51),
                       LendnButton(
-                        text: 'Sign in my Account',
-                        onClick: () {
-                          _signInCubit.doSignIn(state.email.trim(), state.password.trim());
-                        }
-                      ),
+                          text: 'Sign in my Account',
+                          onClick: () {
+                            _signInCubit.doSignIn(
+                                state.email.trim(), state.password.trim());
+                          }),
                       const SizedBox(height: 70),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

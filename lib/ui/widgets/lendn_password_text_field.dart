@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LendnPasswordTextField extends StatefulWidget {
-  String hintText;
-  BorderSide border;
-  Color fillColor;
-  VoidCallback? onPasswordIconPressed;
-  Function(String? value) onTyping;
-  String? initialValue;
-  String? errorText;
+  final String hintText;
+  final BorderSide border;
+  final Color fillColor;
+  final VoidCallback? onPasswordIconPressed;
+  final Function(String? value) onTyping;
+  final String? initialValue;
+  final String? errorText;
 
-  LendnPasswordTextField(
+  const LendnPasswordTextField(
       {Key? key,
         required this.hintText,
         required this.onTyping,

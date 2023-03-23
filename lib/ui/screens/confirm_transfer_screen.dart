@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lendn_app/ui/screens/transfer-completed_screen.dart';
+import 'package:lendn_app/ui/screens/transfer_completed_screen.dart';
 import 'package:pinput/pinput.dart';
-
 import '../../../utils/app_images.dart';
 import '../../data/local/local_storage.dart';
 import '../../di/app_initializer.dart';
@@ -14,7 +13,7 @@ class ConfirmTransferScreen extends StatefulWidget {
   const ConfirmTransferScreen({super.key});
 
   @override
-  _ConfirmTransferScreenState createState() => _ConfirmTransferScreenState();
+  State<ConfirmTransferScreen> createState() => _ConfirmTransferScreenState();
 }
 
 class _ConfirmTransferScreenState extends State<ConfirmTransferScreen> {
@@ -26,6 +25,7 @@ class _ConfirmTransferScreenState extends State<ConfirmTransferScreen> {
   @override
   void initState() {
     storage = AppInitializer.getIt<LocalStorage>();
+    super.initState();
   }
 
   @override
@@ -78,7 +78,7 @@ class _ConfirmTransferScreenState extends State<ConfirmTransferScreen> {
                         blurRadius: 15.0,
                         offset: Offset(0.0, 30.0))
                   ]),
-                  child: const RoundedWithShadow()),
+                  child: const _RoundedWithShadow()),
               const SizedBox(height: 61),
               KeyPad(
                   onChange: (val) {
@@ -120,8 +120,8 @@ class _ConfirmTransferScreenState extends State<ConfirmTransferScreen> {
   }
 }
 
-class RoundedWithShadow extends StatefulWidget {
-  const RoundedWithShadow({Key? key}) : super(key: key);
+class _RoundedWithShadow extends StatefulWidget {
+  const _RoundedWithShadow({Key? key}) : super(key: key);
 
   @override
   _RoundedWithShadowState createState() => _RoundedWithShadowState();
@@ -130,13 +130,13 @@ class RoundedWithShadow extends StatefulWidget {
   String toStringShort() => 'Rounded With Shadow';
 }
 
-class _RoundedWithShadowState extends State<RoundedWithShadow> {
-  var roundedController;
+class _RoundedWithShadowState extends State<_RoundedWithShadow> {
+  TextEditingController? roundedController;
   final focusNode = FocusNode();
 
   @override
   void dispose() {
-    roundedController.dispose();
+    roundedController?.dispose();
     focusNode.dispose();
     super.dispose();
   }

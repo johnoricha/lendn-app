@@ -3,9 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LendnButton extends StatefulWidget {
 
-  String text;
-  VoidCallback onClick;
-  LendnButton({Key? key, required this.text, required this.onClick}) : super(key: key);
+  final String text;
+  final VoidCallback onClick;
+  const LendnButton({Key? key, required this.text, required this.onClick}) : super(key: key);
 
   @override
   State<LendnButton> createState() => _LendnButtonState();

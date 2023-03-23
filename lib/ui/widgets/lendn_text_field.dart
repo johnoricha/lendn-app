@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LendnTextField extends StatefulWidget {
-  String hintText;
-  BorderSide border;
-  Color fillColor;
-  Function(String? value) onTyping;
-  String? initialValue;
-  String? errorText;
+  final String hintText;
+  final BorderSide border;
+  final Color fillColor;
+  final Function(String? value) onTyping;
+  final String? initialValue;
+  final String? errorText;
 
-  LendnTextField({
+  const LendnTextField({
     Key? key,
     required this.hintText,
     required this.onTyping,

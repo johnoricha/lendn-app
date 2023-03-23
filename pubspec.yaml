@@ -45,6 +45,11 @@ dependencies:
   pinput:
   dart_std: ^0.0.4
   get_it: ^7.2.0
+  mockito: ^5.3.2
+  mocktail:
+
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -58,6 +63,8 @@ dev_dependencies:
   retrofit_generator:
   freezed:
   freezed_annotation:
+  bloc_test:
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

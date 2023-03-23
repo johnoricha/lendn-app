@@ -15,7 +15,7 @@ class PinCodeScreen extends StatefulWidget {
   const PinCodeScreen({super.key});
 
   @override
-  _PinCodeScreenState createState() => _PinCodeScreenState();
+  State<PinCodeScreen> createState() => _PinCodeScreenState();
 }
 
 class _PinCodeScreenState extends State<PinCodeScreen> {
@@ -27,6 +27,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
   @override
   void initState() {
     _signUpCubit = AppInitializer.getIt<SignUpCubit>();
+    super.initState();
   }
 
   @override
@@ -104,19 +105,19 @@ class RoundedWithShadow extends StatefulWidget {
   const RoundedWithShadow({Key? key}) : super(key: key);
 
   @override
-  _RoundedWithShadowState createState() => _RoundedWithShadowState();
+  State<RoundedWithShadow> createState() => _RoundedWithShadowState();
 
   @override
   String toStringShort() => 'Rounded With Shadow';
 }
 
 class _RoundedWithShadowState extends State<RoundedWithShadow> {
-  var roundedController;
+  TextEditingController? roundedController;
   final focusNode = FocusNode();
 
   @override
   void dispose() {
-    roundedController.dispose();
+    roundedController?.dispose();
     focusNode.dispose();
     super.dispose();
   }

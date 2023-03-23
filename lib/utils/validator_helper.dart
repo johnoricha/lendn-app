@@ -14,11 +14,6 @@ mixin ValidatorHelper {
   static const String specialChar = 'specialChar';
   static const String noSpace = 'noSpace';
 
-  static const String _emailValidatorRegExp =
-      r'^[a-zA-Z0-9+_.]+@[a-zA-Z0-9]+\.[a-zA-Z]+';
-  static const String _nameValidatorRegExp =
-      r"^(\s)*[A-Za-z]+((\s)?((\'|\-)?([A-Za-z])+))*(\s)*$";
-
   static Map<String, bool> passwordValidation = <String, bool>{
     length: false,
     digit: false,

@@ -8,7 +8,7 @@ import '../../utils/validator_helper.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   final LocalStorage storage;
-  bool userExists = false;
+  bool mUserExists = false;
 
   SignUpCubit(super.initialState, this.storage);
 
@@ -45,9 +45,9 @@ class SignUpCubit extends Cubit<SignUpState> {
     emit(state.copyWith(fullName: value));
   }
 
-  void emailChanged(String value) async {
+  void emailChanged(String value) {
+    checkIfUserExists(value);
     emit(state.copyWith(email: value));
-    userExists = await checkIfUserExists(value);
   }
 
   void passwordChanged(String value) {
@@ -71,7 +71,7 @@ class SignUpCubit extends Cubit<SignUpState> {
         state.password.isNotEmpty) {
       if (ValidatorHelper.getPasswordValidationReport(state.password)) {
 
-        if (!userExists) {
+        if (!mUserExists) {
         return null;
         } else {
           return 'Email already exists';
@@ -85,13 +85,11 @@ class SignUpCubit extends Cubit<SignUpState> {
     }
   }
 
-  Future<bool> checkIfUserExists(String email) async {
-    var userExists = false;
-
+  void checkIfUserExists(String email) async {
+    mUserExists = false;
     if (email == await storage.getEmail()) {
-      userExists = true;
+      mUserExists = true;
     }
 
-    return userExists;
   }
 }
